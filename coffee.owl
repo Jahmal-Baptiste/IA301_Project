@@ -26,7 +26,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#isCoffeeBaseOf"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#isBaseOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
@@ -58,10 +58,8 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeBase"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeIngredient"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Milk"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#OtherExtra"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Water"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#WaterExtra"/>
     </owl:ObjectProperty>
     
@@ -146,9 +144,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#isCoffeeBaseOf -->
+    <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#isBaseOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#isCoffeeBaseOf">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#isBaseOf">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#isIngredientOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
@@ -702,6 +700,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeIngredient">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#DomainThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#isIngredientOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1272,12 +1276,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Milk -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Milk"/>
-    
-
-
     <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra">
@@ -1567,12 +1565,6 @@
     <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Warm_milk">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra"/>
     </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Water -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Water"/>
     
 
 
