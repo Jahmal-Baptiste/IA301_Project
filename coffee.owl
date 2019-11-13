@@ -5,6 +5,7 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:obda="https://w3id.org/obda/vocabulary#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13"/>
     
@@ -55,7 +56,13 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeBase"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeIngredient"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Milk"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#OtherExtra"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Water"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#WaterExtra"/>
     </owl:ObjectProperty>
     
 
@@ -68,7 +75,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Milk"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra"/>
     </owl:ObjectProperty>
     
 
@@ -134,7 +141,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Water"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#WaterExtra"/>
     </owl:ObjectProperty>
     
 
@@ -181,7 +188,7 @@
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#isExtraOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Milk"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeExtra"/>
     </owl:ObjectProperty>
@@ -208,10 +215,10 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Water"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#WaterExtra"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeExtra"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Water"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#WaterExtra"/>
     </owl:ObjectProperty>
     
 
@@ -231,6 +238,54 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Affogato_coffee">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Expresso_base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#OtherExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasOtherExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#IceCream_extra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasStrength"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#BitterSweet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasTemperature"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -239,6 +294,54 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Americano_coffee">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Expresso_base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#WaterExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasStrength"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Bitter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasTemperature"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasWater"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Hot_water"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -263,6 +366,42 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#BlackEye_coffee">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#DripBrew_base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Expresso_base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasStrength"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Strong"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Bitter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasTemperature"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -271,6 +410,60 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Breve_coffee">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Expresso_base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#OtherExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasOtherExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Foam_extra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasOtherExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#SteamedHalfAndHalf_extra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasStrength"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#BitterSweet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasTemperature"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -279,6 +472,54 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CafeAuLait_coffee">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#FrenchPress_base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasMilk"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Scaled_milk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasStrength"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#BitterSweet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasTemperature"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -287,6 +528,66 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CafeLatte_coffee">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Expresso_base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#OtherExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasMilk"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Steamed_milk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasOtherExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Foam_extra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasStrength"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Sweet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasTemperature"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -295,6 +596,72 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Cappuccino_coffee">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Expresso_base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#OtherExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasMilk"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Foamed_milk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasMilk"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Steamed_milk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasOtherExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Chocolate_extra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasStrength"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Sweet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasTemperature"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -351,6 +718,66 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Cortado_coffee">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Expresso_base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#OtherExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasMilk"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Warm_milk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasOtherExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Foam_extra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasStrength"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#BitterSweet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasTemperature"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Warm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -367,6 +794,36 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#DoubleExpresso_coffee">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Expresso_base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasStrength"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Strong"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Bitter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasTemperature"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -399,6 +856,36 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Expresso_coffee">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Expresso_base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasStrength"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Strong"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Bitter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasTemperature"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -407,6 +894,54 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#FlatWhite_coffee">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Expresso_base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasMilk"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Steamed_milk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasStrength"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#BitterSweet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasTemperature"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -419,10 +954,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#FoamedMilk -->
+    <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Foamed_milk -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#FoamedMilk">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Milk"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Foamed_milk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra"/>
     </owl:Class>
     
 
@@ -443,18 +978,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#HotWater -->
+    <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Hot_water -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#HotWater">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Water"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Ice -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Ice">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Water"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Hot_water">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#WaterExtra"/>
     </owl:Class>
     
 
@@ -467,10 +994,96 @@
     
 
 
+    <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Ice_water -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Ice_water">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#WaterExtra"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#IcedCoffee_coffee -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#IcedCoffee_coffee">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Drip_base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Expresso_base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#OtherExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#WaterExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasMilk"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Milk_milk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasOtherExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Syrup_extra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasStrength"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Sweet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasTemperature"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Cold"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasWater"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Ice_water"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -479,6 +1092,54 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#LongBlack_coffee">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Expresso_base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#WaterExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasStrength"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Bitter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasTemperature"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasWater"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Hot_water"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -487,6 +1148,54 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#LongMacchiato_coffee">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Expresso_base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasMilk"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Steamed_milk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasStrength"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Strong"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Bitter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasTemperature"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -495,6 +1204,54 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Macchiato_coffee">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Expresso_base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasMilk"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Steamed_milk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasStrength"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Bitter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasTemperature"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -517,8 +1274,22 @@
 
     <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Milk -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Milk">
+    <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Milk"/>
+    
+
+
+    <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeExtra"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Milk_milk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Milk_milk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra"/>
     </owl:Class>
     
 
@@ -527,6 +1298,72 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Mocha_coffee">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Expresso_base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#OtherExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasMilk"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Steamed_milk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasOtherExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Chocolate_extra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasOtherExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#WhippedCream_extra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasStrength"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Sweet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasTemperature"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -543,14 +1380,50 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#RedEye_coffee">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#DripBrew_base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Expresso_base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasStrength"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Strong"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Bitter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasTemperature"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#ScaledMilk -->
+    <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Scaled_milk -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#ScaledMilk">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Milk"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Scaled_milk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra"/>
     </owl:Class>
     
 
@@ -563,10 +1436,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#SteamedMilk -->
+    <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Steamed_milk -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#SteamedMilk">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Milk"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Steamed_milk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra"/>
     </owl:Class>
     
 
@@ -629,6 +1502,54 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Vienna_coffee">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Coffee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasCoffeeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Expresso_base"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#OtherExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeExtra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasOtherExtra"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#WhippedCream_extra"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasStrength"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#BitterSweet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#hasTemperature"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -641,17 +1562,23 @@
     
 
 
-    <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#WarmMilk -->
+    <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Warm_milk -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#WarmMilk">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Milk"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Warm_milk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#MilkExtra"/>
     </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Water -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Water">
+    <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Water"/>
+    
+
+
+    <!-- http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#WaterExtra -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#WaterExtra">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#CoffeeExtra"/>
     </owl:Class>
     
@@ -702,14 +1629,6 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Bitter"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#BitterSweet"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Sweet"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Cold"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Hot"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/jahmal/ontologies/2019/10/untitled-ontology-13#Warm"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
